@@ -1,0 +1,216 @@
+h1{
+    text-align: center;
+}
+
+.nav-link{
+  color: #000000; 
+  font-weight: bold
+}
+.navbar-nav .nav-link {
+  color: #000000 !important; /* Replace with your desired color */
+}
+
+
+
+.needs-validation{
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #1564a0;
+    padding: 20px;
+    border-radius: 5px;
+    width:100% ;
+   background-color: #CCE8FD;
+   
+   
+}
+
+
+
+.form-group {
+    margin-bottom: 1.5rem;
+  }
+  
+
+  label {
+    font-weight: bold;
+    display: inline-block;
+    width: 150px; /* Adjust the width as needed */
+    margin-left: 15%;
+  }
+.form-group .input{
+  width: 100%;
+}
+  
+  .input-group,
+  .form-control {
+    
+    border-radius: 0;
+    display: inline-block;
+    width: calc(50% - 70px); /* Adjust the width based on the label width */
+    vertical-align: middle;
+    margin-bottom: 1px;
+    margin-left: 3%;
+    text-align: center;
+  }
+  
+
+
+  
+  .btn-primary {
+    border-radius: 10px;
+    margin-left: 30%;
+    width: 40%;
+    margin-top:  1%;
+    margin-bottom: 2%;
+height: 45px;
+  }
+  
+  .form-row {
+  
+    border-radius: 0;
+    display:flex;
+    flex-wrap: wrap;
+    width: 85%; 
+    vertical-align: middle;
+   background-color: white;
+border-radius: 10px;
+   
+  }
+  
+  /* Adjust the styles as needed to match your design preferences */
+ .form-group{
+    
+   
+    margin-top: 50px;
+ }
+
+
+
+ .sel{
+    border-radius: 0;
+    display: inline-block;
+    width: calc(125% - 10px); /* Adjust the width based on the label width */
+    vertical-align: middle;
+  margin-top: -2%;
+    margin-bottom: 5%;
+   
+}
+.sel label{
+  margin-left:  13%;
+  margin-right: 1.5%;
+  
+}
+.custom-select{
+  height: 40px;
+  width: 31.6%;
+  text-align: center;
+}
+.leftc{
+  width: 50%;
+  margin-top: 2%;
+}
+.rightc{
+  width: 50%;
+  margin-top: 2%;
+}
+.y{
+  height: 35px;
+  margin-bottom: 7%;
+}
+
+
+.datess input{
+  width: 39%;
+  text-align: center;
+  height: 35px;
+  margin-bottom: 6%;
+}
+.datess label{
+  
+  width: 170px;
+}
+
+
+@media only screen and (max-width: 256px) {
+  .form-row {
+    width: 100%;
+  }
+  
+  label {
+    width: 100%;
+    margin-left: 0;
+  }
+  
+  .input-group,
+  .form-control {
+    width: 100%;
+    margin-left: 0;
+  }
+  
+  .btn-primary {
+    margin-left: 0;
+    width: 100%;
+  }
+  
+  .dates label,
+  .sel label {
+    margin-left: 0;
+  }
+  
+  .custom-select {
+    width: 100%;
+  }
+}
+
+/* Media Query for screens with maximum width 512px */
+
+  @media only screen and (max-width: 512px) {
+    label {
+      width: 120px;
+    }
+    
+    .input-group,
+    .form-control {
+      width: calc(50% - 50px);
+    }
+    
+    .btn-primary {
+      margin-left: 25%;
+      width: 50%;
+    }
+    
+    .dates input {
+      width: 35%;
+    }
+    
+    .custom-select {
+      width: 45%;
+    }
+  }
+  
+  /* Media Query for screens with maximum width 756px */
+  @media only screen and (max-width: 756px) {
+    label {
+      width: 130px;
+    }
+    
+    .input-group,
+    .form-control {
+      width: calc(50% - 40px);
+    }
+    
+    .btn-primary {
+      margin-left: 20%;
+      width: 60%;
+    }
+    
+    .dates input {
+      width: 30%;
+    }
+    
+    .custom-select {
+      width: 40%;
+    }
+  }

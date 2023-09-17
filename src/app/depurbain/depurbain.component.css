@@ -1,0 +1,185 @@
+h1{
+    text-align: center;
+}
+
+.nav-link{
+  color: #000000; 
+  font-weight: bold
+}
+.navbar-nav .nav-link {
+  color: #000000 !important; /* Replace with your desired color */
+}
+
+
+.needs-validation{
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #1564a0;
+    padding: 20px;
+    border-radius: 5px;
+    width:100% ;
+   background-color: #CCE8FD;
+   
+   height: 600px;
+}
+
+
+
+.form-group {
+    margin-bottom: 1.5rem;
+  }
+  
+
+  label {
+    font-weight: bold;
+    display: inline-block;
+    width: 170px; /* Adjust the width as needed */
+    margin-left: 15%;
+  }
+
+  
+  .input-group,
+  .form-control {
+    
+    border-radius: 0;
+    display: inline-block;
+    width: calc(50% - 70px); /* Adjust the width based on the label width */
+    vertical-align: middle;
+    text-align: center;
+    margin-left: 3%;
+  }
+  
+
+  
+ 
+  
+  .form-row .btn-primary {
+    border-radius: 10px;
+    margin-left: 32%;
+    width: 35%;
+    margin-bottom: 2%;
+    height: 45px;
+  }
+  
+  .form-row {
+  
+    border-radius: 0;
+    display: flex;
+    flex-wrap: wrap;
+    width: 85%; 
+    vertical-align: middle;
+   background-color: white;
+   border-radius: 10px;
+   height: 500px;
+   
+  }
+  
+  /* Adjust the styles as needed to match your design preferences */
+
+
+ .dates{
+   
+
+  margin-bottom: 0%;
+ }
+.dates label{
+  font-weight: bold;
+  display: flex;
+  width: 150px;
+  margin-left: 15%;
+  display: inline-block;
+  margin-right: 6%;
+  }
+.dates input{
+  width: 40%;
+  text-align: center;
+  height: 35px;
+  margin-bottom: 7%;
+}
+
+.heure {
+  display: inline-block;
+
+  width: 100%;
+  
+
+}
+
+.heure label {
+  width: 170px;
+  margin-right: 3%;
+
+  display: inline-block;
+}
+
+.heure input {
+
+  text-align: center;
+width: 40%;
+  height: 35px;
+display: inline-block;
+margin-bottom: 5%;
+}
+  
+ 
+   .leftc{
+    width: 50%;
+    margin-top: 2%;
+   }
+   .rightc{
+    width: 50%;
+    margin-top: 2%;
+    
+    
+   }
+   .y{
+    height: 35px;
+  margin-bottom: 7%;
+   }
+   @media (max-width: 768px) {
+    .form-row {
+      width: 100%;
+    }
+  
+    .form-row .btn-primary {
+      margin-left: 25%;
+      width: 50%;
+    }
+  
+    .dates label,
+    .heure label {
+      width: 120px;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .form-row .btn-primary {
+      margin-left: 20%;
+      width: 60%;
+    }
+  
+    .dates input,
+    .heure input {
+      width: 60%;
+    }
+  
+    .leftc,
+    .rightc {
+      width: 100%;
+    }
+  
+    .dates label,
+    .heure label {
+      width: 100px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .dates input,
+    .heure input {
+      width: 70%;
+    }
+  
+  }

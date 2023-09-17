@@ -1,0 +1,185 @@
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <!-- Container wrapper -->
+  <div class="container-fluid">
+    <!-- Toggle button -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Collapsible wrapper -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <!-- Navbar brand -->
+      <a class="navbar-brand" >
+        <img src="../assets/images/MDC.jpeg" height="30" alt="MDC Logo" loading="lazy">
+      </a>
+      <!-- Left links -->
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link"routerLink="/menurh">Tableau de bord</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"routerLink="/menurh">Equipes</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"routerLink="/menurh">Projets</a>
+        </li>
+      </ul>
+      <!-- Left links -->
+    </div>
+    <!-- Collapsible wrapper -->
+
+    <!-- Right elements -->
+    <div class="d-flex align-items-center">
+      
+    
+
+      <!-- Avatar -->
+
+      <div class="dropdown">
+        <a class="dropdown-toggle d-flex align-items-center hidden-arrow" href="#" id="navbarDropdownMenuAvatar" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <img src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" class="rounded-circle" height="25" alt="Black and White Portrait of a Man" loading="lazy">
+        </a>
+        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuAvatar">
+          <li>
+            <a class="dropdown-item" >Mon profile</a>
+          </li>
+         
+          <li>
+            <a class="dropdown-item" (click)="logout()">Se déconnecter</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- Right elements -->
+  </div>
+  <!-- Container wrapper -->
+</nav>
+<!-- Navbar -->
+<form class="needs-validation" novalidate>
+  <div class="all">
+
+  <div class="title">
+    <nav> Espace Collaborateur</nav>
+  <div class="leftside">
+    <div class="leftc">
+      
+    <div class="c">
+      <div class="card text-center">
+        <div class="card-body">
+          <h5 class="card-title">Ordre de mission</h5>
+          <p class="card-text"></p>
+          <a routerLink="/ordrem" class="btn btn-primary">Suivant</a>
+        </div>
+      </div>
+    </div>
+  
+    <div class="c">
+      <div class="card text-center">
+        <div class="card-body">
+          <h5 class="card-title">Deplacements urbains</h5>
+          <p class="card-text"></p>
+          <a routerLink="/depurb" class="btn btn-primary">Suivant</a>
+        </div>
+      </div>
+    </div>
+  
+    <div class="c">
+      <div class="card text-center">
+        <div class="card-body">
+          <h5 class="card-title">Notes de frais</h5>
+          <p class="card-text"></p>
+          <a  routerLink="/tabl" class="btn btn-primary">Suivant</a>
+        </div>
+      </div>
+    </div>
+    </div>
+  
+    <div class="leftc1">
+    <div class="c">
+      <div class="card text-center">
+        <div class="card-body">
+          <h5 class="card-title">Demande de Congé</h5>
+          <p class="card-text"></p>
+          <a routerLink="/conge" class="btn btn-primary">Suivant</a>
+        </div>
+      </div>
+    </div>
+  
+    <div class="c">
+      <div class="card text-center">
+        <div class="card-body">
+          <h5 class="card-title">Autorisation de Sortie</h5>
+          <p class="card-text"></p>
+          <a routerLink="/autorisation" class="btn btn-primary">Suivant</a>
+        </div>
+      </div>
+    </div>
+    <div class="c">
+      <div class="card text-center">
+        <div class="card-body">
+          <h5 class="card-title"></h5>
+          <p class="card-text"></p>
+          <a routerLink="/autorisation" class="btn btn-primary">Quitter</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+  
+<div class="title">
+  <nav> Espace Manager</nav>
+<div class="leftside"> 
+    <div class="rightc">
+      
+    <div class="c">
+      <div class="card text-center">
+        <div class="card-body">
+          <h5 class="card-title">Liste d'ordre de mission</h5>
+          <p class="card-text"></p>
+          <a routerLink="/listeOrdre" class="btn btn-primary">Suivant</a>
+        </div>
+      </div>
+    </div>
+ 
+      
+ 
+    <div class="c">
+      <div class="card text-center">
+        <div class="card-body">
+          <h5 class="card-title">liste des déplacements</h5>
+          <p class="card-text"></p>
+          <a routerLink="/listeDep" class="btn btn-primary">Suivant</a>
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+  <div class="rightc1"> 
+    <div class="c">
+      <div class="card text-center">
+        <div class="card-body">
+          <h5 class="card-title">liste des Congés</h5>
+          <p class="card-text"></p>
+          <a routerLink="/listeConge" class="btn btn-primary">Suivant</a>
+        </div>
+      </div>
+    </div>
+    <div class="c">
+      <div class="card text-center">
+        <div class="card-body">
+          <h5 class="card-title">Liste d'autorisations de sortie</h5>
+          <p class="card-text"></p>
+          <a routerLink="/listeAut" class="btn btn-primary">Suivant</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
+</div>
+
+ 
+</form>

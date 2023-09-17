@@ -1,0 +1,216 @@
+h1 {
+  text-align: center;
+}
+
+.nav-link {
+  color: #000000;
+  font-weight: bold;
+}
+
+.navbar-nav .nav-link {
+  color: #000000 !important;
+}
+
+.needs-validation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #1564a0;
+  padding: 10px;
+  border-radius: 5px;
+  width: 100%;
+  background-color: #cce8fd;
+  height: 650px;
+  flex-direction: column;
+}
+
+.t {
+  margin-top: 1%;
+  width: 100%;
+  margin-bottom: 1%;
+  border-radius: 5px;
+  table-layout: auto;
+  background-color: white;
+ overflow-y: auto;
+  height: 400px;
+}
+
+.t td {
+  width: auto;
+  height: 50px;
+  text-align: center;
+}
+
+.t th {
+  text-align: center;
+}
+
+.t input {
+  width: 100%;
+  text-align: center;
+  height: auto;
+}
+
+.btn {
+  border-radius: 10px;
+  position: relative;
+  left: 30%;
+  margin-bottom: 3%;
+  display: flex;
+  margin-right: 3%;
+  align-items: center;
+}
+
+.btn-primary {
+  border-radius: 10px;
+  text-align: center;
+  width: 40%;
+  margin-top: 3%;
+  height: 35px;
+  align-items: center;
+}
+
+.form-row {
+  margin-left: 1%;
+  border-radius: 0;
+  display: inline-block;
+  vertical-align: middle;
+  width: 70%;
+  background-color: white;
+  display: flex;
+  vertical-align: middle;
+  border-radius: 10px;
+}
+
+.dates {
+  border-radius: 0;
+  align-items: center;
+  vertical-align: auto;
+  margin-top: 1%;
+}
+
+.dates label {
+  font-weight: bold;
+  display: flex;
+  width: 100px;
+  display: inline-table;
+  margin-right: 5%;
+}
+
+.dates input {
+  width: 50%;
+  margin-bottom: 2.5%;
+  height: 25px;
+  text-align: center;
+  margin-left: 0%;
+}
+
+.input-group,
+.form-control {
+  border-radius: 0;
+  padding: 1%;
+  display: inline-block;
+  width: calc(50% - 10px);
+  text-align: center;
+  margin-bottom: 5%;
+  height: 30px;
+}
+
+.y {
+  height: 30px;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  width: 40%;
+  margin-right: 0%;
+}
+
+label {
+  font-weight: bold;
+  display: inline-block;
+  width: 150px;
+  margin-left: 5%;
+  margin-top: 0%;
+}
+
+.bt {
+  margin-top: 1%;
+  text-align: center;
+  width: 40%;
+  display: inline-block;
+}
+
+.X input {
+  border-radius: 0;
+  padding: 1%;
+  width: 70%;
+  text-align: center;
+  margin-bottom: 5%;
+}
+
+.x {
+  display: inline-block;
+  margin-left: auto;
+  background-color: white;
+  width: 30%;
+  padding: 10px;
+}
+
+.x label {
+  margin-bottom: 2%;
+}
+
+.search {
+  width: 160%;
+  display: flex;
+}
+
+.search .y input {
+  width: 45%;
+  margin-left: 0%;
+ @media (max-width: 768px) {
+  .form-row {
+    width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .dates input {
+    width: 70%;
+  }
+  
+  .input-group,
+  .form-control {
+    width: 100%;
+  }
+  
+  .y {
+    width: 100%;
+  }
+  
+  .bt button {
+    width: 100%;
+  }
+  
+  .x {
+    width: 100%;
+  }
+  
+  .search .y input {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .dates label {
+    width: 80px;
+  }
+  
+  .y {
+    width: 100%;
+  }
+  
+  label {
+    width: 120px;
+  }
+}
+}

@@ -1,0 +1,217 @@
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #CCE8FD;">
+    <!-- Container wrapper -->
+    <div class="container-fluid">
+      <!-- Toggle button -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars"></i>
+      </button>
+  
+      <!-- Collapsible wrapper -->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <!-- Navbar brand -->
+        <a class="navbar-brand" href="#">
+          <img src="../assets/images/MDC.jpeg" height="30" alt="MDC Logo" loading="lazy">
+        </a>
+        <!-- Left links -->
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" (click)="navigateToMenuBasedOnRole()">Menu</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/conge">Equipes</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/conge">Projets</a>
+          </li>
+        </ul>
+        <!-- Left links -->
+      </div>
+      <!-- Collapsible wrapper -->
+  
+      <!-- Right elements -->
+      <div class="d-flex align-items-center">
+        
+      
+  
+        <!-- Avatar -->
+        <div class="dropdown">
+          <a class="dropdown-toggle d-flex align-items-center hidden-arrow" href="#" id="navbarDropdownMenuAvatar" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <img src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" class="rounded-circle" height="25" alt="Black and White Portrait of a Man" loading="lazy">
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuAvatar">
+            <li>
+              <a class="dropdown-item" href="#">My profile</a>
+            </li>
+           
+            <li>
+              <a class="dropdown-item" (click)="logout()">Se déconnecter</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- Right elements -->
+    </div>
+    <!-- Container wrapper -->
+  </nav>
+  <!-- Navbar -->
+  <h1>Demande de congé</h1>
+
+  <form class="needs-validation" (ngSubmit)=" add()">
+ 
+     
+    <div class="form-row">
+      <div class="leftc">
+        
+          <div class="dates">
+            <label for="dateMission">Date:</label>
+            <input readonly type="date" id="dateMission" name="dateConge"  [value]="todayDate">
+        </div>
+      <div class="y">
+        <label for="matriculeEmp" class="x">Matricule</label>
+          <input type="text" [readonly]="userRole === 'EMPLOYE' || userRole === 'MANAGER'" (input)="transformToUppercase($event)"  class="form-control" id="matriculeEmp" name="matriculeEmp" [(ngModel)]="conge.matriculeEmp" value="">
+      </div>
+      
+      <div class="y">
+        <label for="nomPrenom">Nom et prénom</label>
+        <input type="text" [readonly]="userRole === 'EMPLOYE' || userRole === 'MANAGER'" (input)="transformToUppercase($event)" class="form-control" id="nomPrenom" name="nomPrenom"  [(ngModel)]="conge.nomPrenom" required>
+        
+      </div>
+
+      <div class="y">
+        <label for="fonction">Fonction</label>
+        <input type="text"   class="form-control" id="fonction" name="fonction" (input)="transformToUppercase($event)" [(ngModel)]="conge.fonction" required>
+       
+      </div>
+      <div class="dates">
+        <label for="dateDebutC">DU:</label>
+        <input type="date" id="dateDebutC" name="dateDebutC" [min]="todayDate"  [(ngModel)]="startDate" (change)="updateEndDateMinDate()" >
+        <label class="dateFinC" for="fin">AU:</label>
+        <input type="date" id="dateFinC" name="dateFinC" [min]="startDate" [(ngModel)]="endDate">
+      </div>
+    </div>
+    <div class="rightc">
+  
+    <div class="sel">
+    <label for="custom-select">Motif</label>
+    <select class="custom-select" name="motifConge" [(ngModel)]="conge.motifConge">
+        <option selected disabled>choisir le motif</option>
+        <option value="Congé Administratif">Congé Administratif</option>
+        <option value="Congé de naissance">Congé de naissance</option>
+        <option value="Mariage">Mariage</option>
+        <option value="Décès d'un proche">Décès d'un proche</option>
+        <option value="Autre">Autre</option>
+     </select>
+    </div>
+   
+     <!--Table Jours-->
+<div class="t">
+  
+  <table class="table table-bordered border-dark">
+    
+   <tbody>
+     <tr>
+       <td>
+         <div class="d-flex align-items-center">
+        
+           <div class="ms-3">
+             <p class="fw-bold mb-1">Jours disponibles</p>
+             
+           </div>
+         </div>
+       </td>
+       <td>
+        <input type="text"   class="form-control" id="jourDispo" name="jourDispo" [(ngModel)]="conge.jourDispo" required>
+       </td>
+    
+     </tr>
+     <tr>
+       <td>
+         <div class="d-flex align-items-center">
+         
+           <div class="ms-3">
+             <p class="fw-bold mb-1">Jours demandés</p>
+            
+           </div>
+         </div>
+       </td>
+       <td>
+        <input type="text"  class="form-control" id="jourDemandes" name="jourDemandes" [(ngModel)]="conge.jourDemandes" required>
+       </td>
+       
+     </tr>
+     <tr>
+      <td>
+        <div class="d-flex align-items-center">
+        
+          <div class="ms-3">
+            <p class="fw-bold mb-1">Jours restants</p>
+           
+          </div>
+        </div>
+      </td>
+      <td>
+       <input type="text"  class="form-control" id="jourRestants" name="jourRestants" [(ngModel)]="conge.jourRestants" required>
+      </td>
+      
+    </tr>
+    
+   </tbody>
+ </table>
+ </div>
+ <!--table-->
+ <!--table Remplacement-->
+ <div class="t2">
+  <table class="table table-bordered border-dark">
+     
+    <tbody>
+      <tr>
+        <td>
+          <div class="d-flex align-items-center">
+         
+            <div class="ms-3">
+              <p class="fw-bold mb-1">Listes des tâches</p>
+              
+            </div>
+          </div>
+        </td>
+        <td>
+         
+         <textarea class="ta1" id="taches" cols="30" rows="2" (input)="transformToUppercase($event)" name="taches"  [(ngModel)]="conge.taches"></textarea>
+        </td>
+     
+      </tr>
+      <tr>
+        <td>
+          <div class="d-flex align-items-center">
+          
+            <div class="ms-3">
+              <p class="fw-bold mb-1">Intérim 1</p>
+             
+            </div>
+          </div>
+        </td>
+        <td >
+          
+          <textarea class="ta1" id="interim" cols="30" rows="2" name="interim" (input)="transformToUppercase($event)" [(ngModel)]="conge.interim"></textarea>
+      
+        </td>
+        
+      </tr>
+      
+    </tbody>
+  </table>
+  <!--table-->
+  
+  </div>
+  <!--table Remplacement-->
+ 
+ 
+    </div>
+    <button class="btn btn-primary" type="submit">Soumettre pour validation</button>
+</div>
+
+  </form>
+
+ 
+

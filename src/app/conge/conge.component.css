@@ -1,0 +1,254 @@
+h1{
+    text-align: center;
+}
+
+.nav-link{
+  color: #000000; 
+  font-weight: bold
+}
+.navbar-nav .nav-link {
+  color: #000000 !important; /* Replace with your desired color */
+}
+
+
+.needs-validation{
+    
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #1564a0;
+  padding: 20px;
+  border-radius: 5px;
+  width:100% ;
+ background-color: #CCE8FD;
+ 
+ height: 600px;
+}
+.form-row {
+  
+  border-radius: 0;
+  display: flex;
+  flex-wrap: wrap;
+  width: 85%; 
+  vertical-align: middle;
+ background-color: white;
+ border-radius: 10px;
+
+ 
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+
+label {
+  font-weight: bold;
+  display: inline-block;
+  width: 170px; /* Adjust the width as needed */
+  margin-left: 15%;
+}
+
+
+.input-group,
+.form-control {
+  
+  border-radius: 0;
+  display: inline-block;
+  width: calc(50% - 60px); /* Adjust the width based on the label width */
+  vertical-align: middle;
+  text-align: center;
+  margin-left: 3%;
+}
+.leftc{
+  width: 50%;
+  margin-top: 2%;
+ }
+ .rightc{
+  width: 50%;
+  margin-top: 2%;
+  
+  
+ }
+ .y{
+  height: 35px;
+margin-bottom: 6%;
+ }
+
+ .dates{
+   
+
+  margin-bottom: 0%;
+ }
+.dates label{
+  font-weight: bold;
+  display: flex;
+  width: 150px;
+  margin-left: 15%;
+  display: inline-block;
+  margin-right: 6%;
+  }
+.dates input{
+  width: 40%;
+  text-align: center;
+  height: 35px;
+  margin-bottom: 5%;
+}
+.sel{
+  margin-bottom: 4%;
+}
+.custom-select {
+  border-radius: 0;
+  display: inline-block;
+  width: calc(70% - 170px); /* Adjust the width based on the label width */
+  vertical-align: middle;
+  height: 35px;
+text-align: center;  
+margin-left: 1%;
+
+}
+
+.t{
+  margin-left: 15%;
+  width: 70%;
+  margin-bottom: 4%;
+  text-align: center;
+}
+.t input{
+  width: 100%;
+  
+}
+.t td{
+  text-align: center;
+ 
+}
+
+.t2{
+  margin-left: 15%;
+  width: 70%;
+ height: auto;
+  
+}
+.t2 input{
+  width: 100%;
+ height: auto;
+}
+.t2 td{
+  text-align: center;
+height: auto;
+
+}
+textarea{
+  size-adjust: none;
+}
+.form-row .btn-primary {
+  border-radius: 10px;
+  margin-left: 32%;
+  width: 35%;
+  margin-bottom: 2%;
+  height: 45px;
+  margin-top: 2%;
+}
+.ta1{
+  resize: none;
+}
+.form-row .btn-primary :is(:hover, :focus){
+  outline-offset: 3px;
+}
+
+/* Media Queries */
+
+/* For screens with maximum width of 768px */
+@media (max-width: 768px) {
+  .leftc,
+  .rightc {
+    width: 100%;
+    margin-top: 2%;
+  }
+
+  
+  .input-group,
+  .form-control {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .dates input {
+    width: 60%;
+  }
+
+  .custom-select {
+    width: calc(100% - 170px);
+  }
+
+  .t,
+  .t2 {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .form-row .btn-primary {
+    margin-left: 0;
+    width: 70%;
+  }
+}
+
+/* For screens with maximum width of 576px */
+@media (max-width: 576px) {
+  label {
+    display: block;
+    width: 100%;
+    margin-left: 0;
+    margin-bottom: 5px;
+  }
+
+  .input-group,
+  .form-control {
+    width: 100%;
+    margin-left: 0;
+    margin-bottom: 5px;
+  }
+
+  .dates label {
+    width: 100%;
+    margin-right: 0;
+  }
+
+  .dates input {
+    width: 100%;
+  }
+
+  .custom-select {
+    width: 100%;
+    margin-left: 0;
+    margin-bottom: 5px;
+  }
+
+  .t,
+  .t2 {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .form-row .btn-primary {
+    margin-left: 0;
+    width: 100%;
+  }
+}
+
+/* For screens with maximum width of 256px */
+@media (max-width: 256px) {
+  label,
+  .input-group,
+  .form-control,
+  .dates label,
+  .dates input,
+  .custom-select,
+  .t,
+  .t2,
+  .form-row .btn-primary {
+    width: 100%;
+    margin-left: 0;
+    margin-bottom: 5px;
+  }
+}

@@ -1,0 +1,106 @@
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #CCE8FD;">
+    <!-- Container wrapper -->
+    <div class="container-fluid">
+      <!-- Toggle button -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars"></i>
+      </button>
+  
+      <!-- Collapsible wrapper -->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <!-- Navbar brand -->
+        <a class="navbar-brand" href="#">
+          <img src="../assets/images/MDC.jpeg" height="30" alt="MDC Logo" loading="lazy">
+        </a>
+        <!-- Left links -->
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link"(click)="navigateToMenuBasedOnRole()">Menu</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/depurb">Equipe</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/depurb">Projets</a>
+          </li>
+        </ul>
+        <!-- Left links -->
+      </div>
+      <!-- Collapsible wrapper -->
+  
+      <!-- Right elements -->
+      <div class="d-flex align-items-center">
+  
+      
+  
+        <!-- Avatar -->
+        <div class="dropdown">
+          <a class="dropdown-toggle d-flex align-items-center hidden-arrow" href="#" id="navbarDropdownMenuAvatar" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <img src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" class="rounded-circle" height="25" alt="Black and White Portrait of a Man" loading="lazy">
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuAvatar">
+            <li>
+              <a class="dropdown-item" href="#">Mon profile</a>
+            </li>
+          
+            <li>
+              <a class="dropdown-item" (click)="logout()">Se déconnecter</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- Right elements -->
+    </div>
+    <!-- Container wrapper -->
+  </nav>
+  <!-- Navbar -->
+  <h1>Déplacement Urbain</h1>
+
+  <form class="needs-validation" >
+ 
+     
+    <div class="form-row">
+       
+     <div class="leftc">
+      <div class="y " >
+        <label for="matriculeEmp">Matricule:</label>
+        <input type="text" [readonly]="userRole === 'EMPLOYE' || userRole === 'MANAGER'" (input)="transformToUppercase($event)" class="form-control" id="matriculeEmp"name="matriculeEmp" [(ngModel)]="deplacementurb.matriculeEmp" required>
+        
+      </div>
+      <div class="y ">
+        <label for="nomPrenom">Nom et Prénom:</label>
+        <input type="text" [readonly]="userRole === 'EMPLOYE' || userRole === 'MANAGER'" (input)="transformToUppercase($event)" class="form-control" id="nomPrenom" name="nomPrenom" [(ngModel)]="deplacementurb.nomPrenom" required>
+        
+
+      </div>
+      <div class="y">
+        <label for="nomClient">Nom du client:</label>
+        <input type="text" class="form-control" id="nomClient" name="nomClient" (input)="transformToUppercase($event)" [(ngModel)]="deplacementurb.nomClient"  required>
+       
+      </div>
+    
+      
+     
+     </div>
+    <div class="rightc">
+      <div class="y">
+        <label for="objetMission">Objet de la mission:</label>
+        <input type="text" class="form-control" id="objetMission" name="objetMission" (input)="transformToUppercase($event)" [(ngModel)]="deplacementurb.objetMission" required>
+      </div>
+      <div class="dates">
+        <label for="dateDep">Date de la mission:</label>
+        <input type="date" id="dateDep" name="dateDep" [min]="oneWeekAgoDate" [(ngModel)]="selectedDate">
+    </div>
+    <div class="heure">
+    <label for="debut">Heure de départ:</label>
+    <input type="time" id="heureDepart" name="heureDepart"  [(ngModel)]="deplacementurb.heureDepart">
+     </div>
+
+ 
+</div>
+
+  <button class="btn btn-primary" type="submit"  (click)="add()">Soumettre pour validation</button>
+    
+</div>
+  </form>

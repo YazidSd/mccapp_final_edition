@@ -1,0 +1,216 @@
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #CCE8FD;">
+    <!-- Container wrapper -->
+    <div class="container-fluid">
+      <!-- Toggle button -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars"></i>
+      </button>
+  
+      <!-- Collapsible wrapper -->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <!-- Navbar brand -->
+        <a class="navbar-brand" href="#">
+          <img src="../assets/images/MDC.jpeg" height="30" alt="MDC Logo" loading="lazy">
+        </a>
+        <!-- Left links -->
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link dark-nav-link" (click)="navigateToMenuBasedOnRole()">Menu</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/tabl">Equipe</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/tabl">Projets</a>
+          </li>
+        </ul>
+        <!-- Left links -->
+      </div>
+      <!-- Collapsible wrapper -->
+  
+      <!-- Right elements -->
+      <div class="d-flex align-items-center">
+  
+     
+  
+        <!-- Avatar -->
+        <div class="dropdown">
+          <a class="dropdown-toggle d-flex align-items-center hidden-arrow" href="#" id="navbarDropdownMenuAvatar" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <img src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" class="rounded-circle" height="25" alt="Black and White Portrait of a Man" loading="lazy">
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuAvatar">
+            <li>
+              <a class="dropdown-item" href="#">Mon profile</a>
+            </li>
+        
+            <li>
+              <a class="dropdown-item" (click)="logout()">Se déconnecter</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- Right elements -->
+    </div>
+    <!-- Container wrapper -->
+  </nav>
+  <!-- Navbar -->
+  <h1>Notes des frais de déplacement</h1>
+ <!--first form-->
+
+ <form class="needs-validation" novalidate>
+  <div class="form-row">
+   <div class="search">
+    <div class="y">
+      <label for="numOM">N° d'orde: </label>
+      <input type="text" class="form-control" id="numOM" name="numOM" [(ngModel)]="numOM" required>  
+    </div>
+
+   
+      <div class="dates">
+        <label for="startDate">DU:</label>
+        <input type="date" id="startDate" name="startDate"  [(ngModel)]="startDate">
+        <label class="label2" for="endDate">AU:</label>
+        <input type="date" id="endDate" name="endDate"  [(ngModel)]="endDate">
+      </div>
+   
+    <div class="bt">
+    <button (click)="onSearch()"  class="btn-primary" type="submit">Rechercher</button>
+    </div>
+   </div>
+</div>
+<!--table frais-->
+<div class="t">
+  <table class="table table-bordered">
+    <thead class="table-dark">
+      <tr>
+        <th>check</th>
+        <th>Numero déplacement</th>
+        <th>Date</th>
+        <th>Description</th>
+        <th>Depart</th>
+        <th>Retour</th>
+        <th>Frais de transport</th>
+        <th>Frais hébergement</th>
+        <th>Type Transport</th>
+        <th>Repas</th>
+        <th>Kilometres</th>
+        <th>Indémnités au kilomètre</th>
+        <th>Frais divers</th>
+        <th>Total</th>
+        <th>Avance</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let ordremission of ordremissionlist">
+        <td>
+          <input type="checkbox" id="check" [name]="ordremission.numOrdre.toString()" [(ngModel)]="selectedRows[ordremission.numOrdre.toString()]">
+        </td>
+        <td>
+          {{ordremission.numOrdre}}     
+        </td>
+        <td>
+          {{ordremission.dateMission}}
+          
+        </td>
+        <td>
+          {{ordremission.objetMission}}
+        </td>
+        <td>
+          {{ordremission.debutMission}}
+        </td>
+        <td>
+          {{ordremission.finMission}}
+        </td>
+        <td >
+          <input readonly type="text" class="form-control" id="validationTooltip02" name="fraisTransport" [(ngModel)]="newNote.fraisTransport" required>
+        </td>
+        <td>
+          <input readonly type="text" class="form-control" id="validationTooltip02" name="hebergement" [(ngModel)]="newNote.hebergement" required>
+        </td>
+        <td>
+          <input readonly type="text" class="form-control" id="validationTooltip02" name="typeTransport" [(ngModel)]="newNote.typeTransport" >
+        </td>
+        <td>
+          <input readonly type="text" class="form-control" id="validationTooltip02" name="fraisRepas" [(ngModel)]="newNote.fraisRepas" required>
+        </td>
+        <td>
+          <input readonly type="text" class="form-control" id="validationTooltip02" name="Kilometres" [(ngModel)]="newNote.kilometres"  required>
+        </td>
+        <td>
+          <input readonly type="text" class="form-control" id="validationTooltip02" name="indemnitesKm" [(ngModel)]="newNote.indemnitesKm" required>
+        </td>
+        <td>
+          <input readonly type="text" class="form-control" id="validationTooltip02" name="fraisDivers" [(ngModel)]="newNote.fraisDivers" required>
+        </td>
+        <td>
+          <input readonly type="text" class="form-control" id="validationTooltip02" name="total" [(ngModel)]="newNote.total" required>
+        </td>
+        <td>
+           <input readonly type="text" class="form-control" id="validationTooltip02" name="avance" [(ngModel)]="newNote.avance"  required>
+        </td>
+      </tr>
+      <tr *ngFor="let deplacementurbain of deplacementlist">
+        <td>
+          <input type="checkbox" id="check" [name]="deplacementurbain.numDep.toString()" [(ngModel)]="selectedRows[deplacementurbain.numDep.toString()]">
+        </td>
+        
+        <td>
+          {{deplacementurbain.numDep}}     
+        </td>
+        <td>
+          {{deplacementurbain.dateDep}}
+          
+        </td>
+        <td>
+          {{deplacementurbain.objetMission}}
+        </td>
+        <td>
+          {{deplacementurbain.heureDepart}}
+        </td>
+        <td>
+          {{deplacementurbain.heureRetourPr}}
+        </td>
+        <td >
+          <input readonly type="text" class="form-control" id="validationTooltip02" name="fraisTransport" [(ngModel)]="newNote.fraisTransport" required>
+        </td>
+        <td>
+          <input readonly type="text" class="form-control" id="validationTooltip02" name="hebergement" [(ngModel)]="newNote.hebergement" required>
+        </td>
+        <td>
+          <input readonly type="text" class="form-control" id="validationTooltip02" name="typeTransport" [(ngModel)]="newNote.typeTransport" >
+        </td>
+        <td>
+          <input readonly type="text" class="form-control" id="validationTooltip02" name="fraisRepas" [(ngModel)]="newNote.fraisRepas" required>
+        </td>
+        <td>
+          <input readonly type="text" class="form-control" id="validationTooltip02" name="Kilometres" [(ngModel)]="newNote.kilometres"  required>
+        </td>
+        <td>
+          <input readonly type="text" class="form-control" id="validationTooltip02" name="indemnitesKm" [(ngModel)]="newNote.indemnitesKm" required>
+        </td>
+        <td>
+          <input readonly type="text" class="form-control" id="validationTooltip02" name="fraisDivers" [(ngModel)]="newNote.fraisDivers" required>
+        </td>
+        <td>
+          <input readonly type="text" class="form-control" id="validationTooltip02" name="total" [(ngModel)]="newNote.total" required>
+        </td>
+        <td>
+           <input readonly type="text" class="form-control" id="validationTooltip02" name="avance" [(ngModel)]="newNote.avance"  required>
+        </td>
+      </tr>
+      
+     
+    </tbody>
+  </table>
+  </div>
+  <!--table frais-->
+
+
+  <div class="btn">
+    <button   class="btn btn-primary" type="submit" (click)="onClickExportToExcel()">Ajouter</button>
+    <button   class="btn btn-primary" type="submit" (click)="onClickExportToExcel()" >modifier</button>
+    <button   class="btn btn-primary" type="button" >Supprimer</button>
+   
+  </div>
+</form>

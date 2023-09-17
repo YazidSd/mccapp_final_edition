@@ -1,0 +1,133 @@
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #CCE8FD;">
+    <!-- Container wrapper -->
+    <div class="container-fluid">
+      <!-- Toggle button -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars"></i>
+      </button>
+  
+      <!-- Collapsible wrapper -->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <!-- Navbar brand -->
+        <a class="navbar-brand" href="#">
+          <img src="../assets/images/MDC.jpeg" height="30" alt="MDC Logo" loading="lazy">
+        </a>
+        <!-- Left links -->
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" (click)="navigateToMenuBasedOnRole()">Menu</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/ordrem">Equipe</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/ordrem">Projets</a>
+          </li>
+        </ul>
+        <!-- Left links -->
+      </div>
+      <!-- Collapsible wrapper -->
+  
+      <!-- Right elements -->
+      <div class="d-flex align-items-center">
+  
+       
+        <!-- Avatar -->
+        <div class="dropdown">
+          <a class="dropdown-toggle d-flex align-items-center hidden-arrow" href="#" id="navbarDropdownMenuAvatar" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <img src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" class="rounded-circle" height="25" alt="Black and White Portrait of a Man" loading="lazy">
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuAvatar">
+            <li>
+              <a class="dropdown-item" href="#">Mon profile</a>
+            </li>
+           
+            <li>
+              <a class="dropdown-item" (click)="logout()">Se déconnecter</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- Right elements -->
+    </div>
+    <!-- Container wrapper -->
+  </nav>
+  <!-- Navbar -->
+  <h1>ORDRE DE MISSION</h1>
+
+  <form class="needs-validation" (ngSubmit)=" add()" >
+ 
+     
+    <div class="form-row">
+       <div class="leftc">
+      <div class="datess">
+          <label for="dateMission">Date:</label>
+          <input readonly type="date" id="dateMission" name="dateMission"   [value]="todayDate">
+      </div>
+      <div class="y">
+        <label for="matriculeEmp">Matricule</label>
+        <input type="text" [readonly]="userRole === 'EMPLOYE' || userRole === 'MANAGER'" (input)="transformToUppercase($event)" class="form-control" id="matriculeEmp" name="matriculeEmp"  value="" [(ngModel)]="ordremission.matriculeEmp" required>
+        
+      </div>
+      <div class="y">
+        <label for="nomPrenom">Nom et prénom</label>
+        <input type="text" [readonly]="userRole === 'EMPLOYE' || userRole === 'MANAGER'" (input)="transformToUppercase($event)" class="form-control" id="nomPrenom" name="nomPrenom"  value="" [(ngModel)]="ordremission.nomPrenom" required>
+        
+      </div>
+
+      <div class="y">
+        <label for="cin">CIN</label>
+        <input type="text"[readonly]="userRole === 'EMPLOYE' || userRole === 'MANAGER'" (input)="transformToUppercase($event)" class="form-control" id="cin" name="cin" value=""  [(ngModel)]="ordremission.cin"required>
+       
+      </div>
+    
+    
+      <div class="datess">
+        <label for="debutMission">Début de mission:</label>
+        <input type="date" id="debutMission" name="debutMission" [min]="oneWeekAgoDate" [(ngModel)]="startDate" (change)="updateEndDateMinDate()"  required>
+        <label class="label2" for="fin">Fin de mission:</label>
+        <input type="date" id="finMission" name="finMission" [min]="startDate" [(ngModel)]="endDate" required>
+      </div>
+      
+</div>
+<div class="rightc">
+  <div class="y">
+    <label for="lieuDestination">Lieu de destination</label>
+    <input type="text"  class="form-control" id="lieuDestination" name="lieuDestination" value="" (input)="transformToUppercase($event)"  [(ngModel)]="ordremission.lieuDestination" required>
+   
+  </div>
+
+
+      <div class="y">
+        <label for="ville">Ville</label>
+        <input type="text"  class="form-control" id="ville" name="ville"  value="" (input)="transformToUppercase($event)"  [(ngModel)]="ordremission.ville" required>
+       
+      </div>
+    
+      <div class="y">
+        <label for="objetMission">Objet de la Mission</label>
+        <input type="text"  class="form-control" id="objetMission" name="objetMission" (input)="transformToUppercase($event)"  value=""   [(ngModel)]="ordremission.objetMission"required>
+      </div>
+        <div class="sel">
+            <label for="custom-select">Moyen de déplacement</label>
+            <select class="custom-select" name="moyenDeplacemen" [(ngModel)]="ordremission.moyenDeplacement" required>
+                <option selected disabled>choisir le moyen</option>
+                <option value="Voiture de service"  >Voiture de service</option>
+                <option value="Voiture personnelle" >Voiture personnelle</option>
+                <option value="Transport commun">Transport commun</option>
+             </select>
+        </div>
+        <div class="y">
+            <label for="matriculeVehicule">Matricule Véhicule</label>
+            <input type="text" class="form-control" id="matriculeVehicule" name="matriculeVehicule"  value=""  [(ngModel)]="ordremission.matriculeVehicule">
+        </div>
+
+       </div>
+        
+    
+  
+    <button class="btn btn-primary" type="submit ">Soumettre pour validation</button>
+    
+</div>
+  </form>

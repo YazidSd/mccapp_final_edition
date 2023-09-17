@@ -1,0 +1,114 @@
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #CCE8FD;">
+    <!-- Container wrapper -->
+    <div class="container-fluid">
+      <!-- Toggle button -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars"></i>
+      </button>
+  
+      <!-- Collapsible wrapper -->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <!-- Navbar brand -->
+        <a class="navbar-brand" href="#">
+          <img src="../assets/images/MDC.jpeg" height="30" alt="MDC Logo" loading="lazy">
+        </a>
+        <!-- Left links -->
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" (click)="navigateToMenuBasedOnRole()">Menu</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/autorisation">Equipes</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/autorisation">Projets</a>
+          </li>
+        </ul>
+        <!-- Left links -->
+      </div>
+      <!-- Collapsible wrapper -->
+  
+      <!-- Right elements -->
+      <div class="d-flex align-items-center">
+       
+       
+  
+        <!-- Avatar -->
+        <div class="dropdown">
+          <a class="dropdown-toggle d-flex align-items-center hidden-arrow" href="#" id="navbarDropdownMenuAvatar" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <img src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" class="rounded-circle" height="25" alt="Black and White Portrait of a Man" loading="lazy">
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuAvatar">
+            <li>
+              <a class="dropdown-item" href="#">Mon profile</a>
+            </li>
+  
+            <li>
+              <a class="dropdown-item" (click)="logout()">Se déconnecter</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- Right elements -->
+    </div>
+    <!-- Container wrapper -->
+  </nav>
+  <!-- Navbar -->
+  <h1>Autorisation de sortie</h1>
+
+  <form class="needs-validation" (ngSubmit)=" add()">
+ 
+     
+    <div class="form-row">
+       <div class="leftc">
+       
+
+      <div class="y">
+        <label for="matriculeEmp">Matricule:</label>
+        <input type="text" (input)="transformToUppercase($event)"  [readonly]="userRole === 'EMPLOYE' || userRole === 'MANAGER'"  class="form-control" id="matriculeEmp" name="matriculeEmp" [(ngModel)]="autorisation.matriculeEmp" required>
+        
+      </div>
+      <div class="y">
+        <label for="nomPrenom">Nom et Prénom:</label>
+        <input type="text" (input)="transformToUppercase($event)"  [readonly]="userRole === 'EMPLOYE' || userRole === 'MANAGER'" class="form-control" id="nomPrenom" name="nomPrenom" [(ngModel)]="autorisation.nomPrenom" required>
+        
+      </div>
+
+      <div class="y">
+        <label for="directionp">Direction:</label>
+        <input type="text" (input)="transformToUppercase($event)"  [readonly]="userRole === 'EMPLOYE' || userRole === 'MANAGER'" class="form-control" id="directionp" name="directionp" [(ngModel)]="autorisation.directionp" required>
+       
+      </div>
+    </div>
+    <div class="rightc">
+       <div class="dates">
+            <label for="debut">Date:</label>
+            <input type="date" id="birthdayd" name="debut" [min]="todayDate" [(ngModel)]="todayDate">
+        </div>
+    <div class="heure">
+    <label for="heureDepart">Heure de sortie:</label>
+    <input type="time" id="heureDepart" name="heureDepart" [(ngModel)]="autorisation.heureDepart">
+    <label class="label2" for="heureRetourPr">Heure d'entrée previsionelle:</label>
+    <input type="time" id="heureRetourPr" name="heureRetourPr" [(ngModel)]="autorisation.heureRetourPr">
+     </div>
+
+  <div class="y">
+    <label for="motif">Motif:</label>
+    <input type="text" class="form-control" id="motif" name="motif" (input)="transformToUppercase($event)"  [(ngModel)]="autorisation.motif" >
+    
+  </div>
+</div> 
+<div class="NB">
+<p><strong>NB:</strong> </p>
+<pre>
+  -Toute sortie non autorisée sera considérée comme absence.
+  -Autorisation valable pour un maximum de 3H d'absence, au-delà elle devra 
+    être remplacée par une demande de congé.<br>
+</pre>
+</div>
+    
+    <button class="btn btn-primary" type="submit">Demander l'autorisation</button>
+    
+</div>
+  </form>

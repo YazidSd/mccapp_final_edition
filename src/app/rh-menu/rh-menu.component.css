@@ -1,0 +1,137 @@
+.nav-link{
+  color: #000000; 
+  font-weight: bold
+}
+.navbar-nav .nav-link {
+  color: #000000 !important; /* Replace with your desired color */
+}
+
+
+.form-row  {
+  border: 1px solid #1564a0;
+
+  border-radius: 0;
+  display: flex;
+  height: 650px;
+  width: 100%; /* Adjust the width based on the label width */
+  vertical-align: middle;
+  margin-right: 5%;
+ background-color: transparent;
+  display: inline;
+  vertical-align: middle;
+  border-radius: 10px; 
+}
+
+.needs-validation{
+    
+  display: flex;
+
+  border: 1px solid #1564a0;
+  padding: 10px;
+  border-radius: 5px;
+  width:100% ;
+ background-color: #CCE8FD;
+ height: 650px;
+
+}
+.all{
+ 
+
+  display: flex;
+  width: 100%;
+  margin-left: 3%;
+  margin-right: 3%;
+}
+
+.card-body{
+  height: 180px;
+background-color: rgb(228, 242, 255);}
+
+.btn{
+  margin-top: 4%;
+  width: 30%;
+}
+p{
+  margin-top: 7%;
+}
+h5{
+  font-weight: bold;
+}
+
+
+/* Common styles for cards */
+.leftside .c {
+  width: 100%;
+  padding: 2%;
+
+
+}
+.leftside{
+  width: 100%;
+  display: flex;
+}
+.title{
+  width: 50%;
+  padding: 1%;
+  
+}
+.title nav{
+  width: 98.1%;
+  height: 5.5%;
+ text-align: center;
+ font-size: 1.5em;
+ background-color: azure;
+ color: black;
+ 
+ 
+
+}
+
+/* Styles for the left column */
+.leftc {
+  
+
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  
+}
+.leftc1 {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin-right: 2%;
+
+}
+
+/* Styles for the right columns */
+.rightc {
+  
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+ 
+}
+.rightc1 {
+/*  margin-top: 3%;*/
+background-color: white;
+margin-right: 2%;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+ 
+}
+.h3{
+  text-align: right;
+  
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  .leftc, .rightc {
+    width: 100%;
+  }
+}
